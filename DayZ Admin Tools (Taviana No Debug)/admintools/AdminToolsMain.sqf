@@ -94,6 +94,8 @@ ToolsMenu2 =
 [
 ["",true],
 		["Flip Vehicle", [2],  "", -5, [["expression", format[_EXECscript1,"flipvehicle.sqf"]]], "1", "1"],
+		['Delete Target', [3], '', -5, [['expression', '_aim = cursorTarget;if (_aim != player) then {_aim setDamage 1.1;deleteVehicle _aim;cutText [format["%1 Destroyed", _aim], "PLAIN"];};']], '1', '1'],
+		['Delete destroyed Vehicle', [4], '', -5, [['expression', '{if !(_x isKindOf "Man") then {deleteVehicle _x};} forEach allDEAD;']], '1', '1'],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
